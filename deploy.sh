@@ -7,7 +7,7 @@
 # To use this script you need a config file:
 #    .service/deploy.config :
 #              bucket=mybucket
-#          exclude=.git/*,.service/*,secret_file    # files and directories to exclude from uploading
+#          exclude=.git/*,some_dir/*,secret_file    # files and directories to exclude from uploading
 #          bundle=script1.js,script2.js,script3.js  # scripts listed here would be removed from HTML files
 #                                                   # and bundeled into a single file, which will be minified
 #                                                   # A separate bundle is created for every HTML file
@@ -50,9 +50,9 @@ function create_bundle() {
         #this is a grep command
         local grep0="$BUNDLE_GREP $html_source_file"
         #name before babel
-        local bundle_before_babel="$TMP/ab.doc.bundle$bundle_n.js"
+        local bundle_before_babel="$TMP/tmp.bundle$bundle_n.js"
         #name to be used in html
-        local bundle_after_babel_src="scripts/ab.doc.bundle$bundle_n.min.js"
+        local bundle_after_babel_src="scripts/tmp.bundle$bundle_n.min.js"
         #name after babel
         local bundle_after_babel="$PACKAGE/$bundle_after_babel_src"
         $grep0 | while read -r x; do
