@@ -11,6 +11,7 @@ bundle=script1.js,script2.js,script3.js  # scripts listed here would be removed 
                                          # A separate bundle is created for every HTML file
 ```
 
+You need to install AWS cli. 
 You also need to install babel-cli and babel-preset-minify from npm:
 ```
 npm install --save-dev babel-cli
