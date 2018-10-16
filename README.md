@@ -1,6 +1,6 @@
 # s3-deploy
 Bash script for simple AWS S3 deployments.
-It uploads files to the bucket, corrects timestamps of files included in HTML, bundles js scripts.
+It finds all static files links in HTML. Then it checks files modification timestamps and updates `?ver=v13434` part of the links. This is needed to prevent unnecessary caching and force reload of all modified files. After that, it bundles js-scripts and uploads files to the bucket setting cache control headers max-age=0 for all files except HTML. This is needed to force a refresh of the AWS CloudFront cache.
 
 To use this script you need a config file (deploy.config) in the root folder of you project:
 ```
