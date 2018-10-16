@@ -28,7 +28,7 @@ VERBOSE=false
 NO_UPLOAD=false
 PACKAGE="package"
 TMP="$PACKAGE/.temp"
-CONFIG=".service/deploy.config"
+CONFIG="deploy.config"
 PATH="$PATH:./node_modules/.bin"
 
 function log() {
